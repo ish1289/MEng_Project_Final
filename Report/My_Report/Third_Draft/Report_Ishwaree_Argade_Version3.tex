@@ -1,0 +1,258 @@
+\documentclass[11pt,letterpaper]{report}
+\usepackage{listings} % Allow listing of source codes
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, shadows}
+\usepackage{graphicx}   % Required to use pictures
+\usepackage{cite}
+\usepackage{url}  % \url command for bibliography entries
+\usepackage{setspace}   % Control line spacing
+\lstset{numbers=left,
+numberstyle=\tiny,basicstyle=\small,
+tabsize=2,breaklines,showstringspaces=false,frame=tB}
+\lstset{literate=
+{ö}{{\"o}}1
+{ä}{{\"a}}1
+{ü}{{\"u}}1
+{Ö}{{\"O}}1
+{Ü}{{\"U}}1
+{Ä}{{\"A}}1
+{ß}{{\ss{}}}1}
+
+\title{Structured Repository of Information Related to Software Certification}
+\author{
+        \normalsize
+        Ishwaree Argade
+            \mbox{}\\ %
+        \normalsize MEng(Computer Science)
+         \mbox{} \\
+       \normalsize Department of Computing and Software 
+                \mbox{}\\ %
+        \normalsize McMaster University 
+        \mbox{} \\
+        \date{\today} \\
+}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+Software certification is the process of collecting evidence that the (software) parts of a software intensive system satisfies its requirements.  As this is a rather new field, it is important to collect current materials on this topic, to serve as reference material.  This is the particular task described here: choosing, indexing and classifying various materials pertaining to software certification, with an eye towards searchability and reuse.  For concreteness, rather than selecting all materials, three areas were chosen: challenge problems, course modules, and certified libraries (with their accompanying tools).  The data thus collected was made into a repository.  A choice was made to use standard technologies (XML, Schema, XSL, etc) for this purpose, to leverage the great many tools already in existence.
+
+Throwing data into a repository is insufficient for searchability and reusability.  At the very least, the data needs to be described in a relatively uniform manner.  Thus, after an initial data gathering process was done, commonalities in the meta-data associated with each area (challenge problems, etc) were identified.  These were then codified in a Schema (using XSD), one per area.  The design of these schemas is explained, and their adequacy is verified by instantiating it with some same data.  For human understandability of the results, we also created some XSL to display the data, guided by the schema.  
+\end{abstract}
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\chapter{Introduction}
+
+Software Certification deals with the process of certifying a system containing some software inside it but, restricting the certification process to the software aspect only \cite{seminar}. The certification process ensures the reliability and safety of the software system to be certified listing all the information necessary for its assessment. It encompasses the wide range of formal, semi-formal and informal assurance techniques which include even formal verification of security policies, system simulation, testing and code reviews \cite{SCMS}. Thus, the certificates can have different types and certification process follow various mechanisms.
+
+Most popular approach for software certification is the process based certification of systems. The process through which a software system is developed is evaluated rather than evaluating the final product. As many software certifiers find the evaluation of software process easier than evaluation of the product itself, process based certification is widely used \cite{Lawford}. One reason for this is, it is not possible to test the final product entirely even with the help of a huge number of test cases. Hence, the focus is given on certain supportive evidences which would guarantee the quality of the software systems. Secondly, it is difficult to determine the metrics/attributes essential in assessing the final software product, more emphasis is given on the software process instead \cite{Lawford}. Some examples of this approach like ISO 9000 and CMMI certify that the proper engineering methods and processes are followed to manufacture the product \cite{Voas}.
+
+Though process based certification is a general approach, it does not guarantee the reliability of the software as it focuses only on the process and not on the individual product. It certifies overall products and not a specific product. Thus, another approach called product based certification is put forward. A detailed analysis of this aspect of software certification is found out in the paper by Wassyng, Maibaum, and Lawford \cite{Lawford}. According to them, the goal of the certification should be to ensure that the product satisfies certain characteristics by assessing some measurable attributes of the product. This approach to the software certification believes that there should be a mandated software development process which would guarantee the quality of development process of the product and then the product can be evaluated without consideration of the actual process followed to develop a specific product \cite{Lawford}.
+
+Another certification method based on product based approach is proposed by Voas \cite{Voas}. According to him, by hiring a third party to issue software certification based on end users' feedback provides more unbiased and reliable software certification. Using this concept, he proposes a certification process involving automated methods to assess the behaviour of the software and to avoid the problem of miscertification \cite{Voas}.
+
+Software development nowadays widely follows reusability of components. Reuse of components is an important factor to reduce the cost of software development. Thus, the reliability of the part to be reused has to be evaluated. One method to determine the reliability of software that builds the structural model and usage profile of software components and then evaluates it against a set of test cases is given by Wohlin and Runeson \cite{CSC} and is applicable to both part as well as system certification.
+
+A software certification management system is used for management of certification \cite{SCMS}. It stores the information about different systems and varieties of certificates along with the entire certification of history of the specific system. One of the challenges related to software certification is storing and providing the useful information. Hence, the goal of this report is to create a repository to store some material in various areas related to Software Certification.
+
+This report focuses on three areas related to Software Certification namely Challenge Problems, Course Modules and Certified Software Libraries and Verification Tools in order to index some available material in the respective areas. These areas were already chosen by the principals running the Software Certification project at McMaster. The latter chapters would introduce the idea of the software repository meant to store available material, schema designing and testing processes for Challenge problems, Course Modules and Certified Software Libraries finally concluding with future scope.
+
+\chapter{Global Requirements}
+The primary requirement is to find the reference material related to three chosen areas. For example, sample challenge problems like SAT Challenge, CADE ATP challenge etc. were selected as reference problems for challenge problem area. 
+This completes the data gathering process for each area. However, the gathered data needs to be stored in a uniform structural format which makes it searchable and reusable. Thus, a schema one for each chosen area should be designed to classify the material related to the corresponding area. 
+
+In order to accomplish the schema designing task, the meta-data associated with all the reference material in each area is identified. The next task is to select attributes which can be organized in the schematic format using the meta-data. This is done by finding the commonalities between the meta-data associated with each area. This is the final step in the requirement gathering process. The attributes for each area are then converted into the corresponding schemas.   
+
+\chapter{Overview of Software Repository}
+ The design of the repository is provided by the principals running the Software Certification project at McMaster. The central structure of the repository is shown in \ref{Fig:1}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=110mm]{Images/Overview_SW_Repo.jpg}
+\caption{Design of Software Repository}
+\label{Fig:1}
+\end{figure}
+
+The report considers first three components of this repository namely Challenge Problems, Course Modules and Creation and Maintenance of Library and Tools. The Challenge Problem part of the repository is meant to store some challenge problems in the area of software certification. Challenge problems are sets of prototypes in the software certification area. Examples of various challenge problems are SMT COMP challenge, CADE ATP challenge, Pacemaker challenge etc. Most of the challenge problems are offered every year as a part of various conferences and workshops held for software communities. The goal is to design a schema which would capture all the generic information such as format of the problem, expected solution, rules for the challenge, available solutions, deadlines etc for all the challenges and store in a uniform format. Course modules intend to have all the information about the courses involving topics in software certification. The schema mainly targets all the time independent information like aim of the course, learning outcomes, course outlines, materials etc. The last component manages information about libraries and verification tools. Libraries are of two types. It can either be a library which is a part of a verification tool or it can be a library that is verified by a verification tool. For example, Coq is a tool used for verification of libraries and contains number of libraries. So, many libraries can be a part of a tool and can be verified by a tool. Libraries and tools are stored using different schemas.  
+
+\chapter{Methodology} 
+Schema design imposes a logical structure on the data. It organizes the information in a structured way which makes it easy to search, index and visualize. Thus, a schema is required here to store the material in a uniform manner. Material around the three areas is independent of each other and is characterized by different attributes. Thus, the repository would have a schema design for each of the components of the repository. So, there would be separate schemas for challenge problems, course modules, libraries and tools. 
+
+The material associated to each area is loosely bound meaning that they have various optional elements and can be stored effectively using XMLs instead of relational databases. Therefore, the schemas would be created as XSDs that would cover all the required parameters to store the required data for that component. Prior to the actual schema implementation, some data samples are analyzed and attributes are figured out as explained in the requirement gathering process. The schema is then implemented using the attribute listing. The corresponding XMLs are validated against the corresponding XSD schemas using an online tool \cite{olXSD}. Finally, XSLs designed according to particular schemas of the components of the repository, are used to view XMLs in the browser. An online XSL transformer tool is used to transform XML using the respective XSL into HTML code \cite{olXSL}. This HTML is then viewed in the browser. This process is repeated for all the components of the repository. 
+
+The subsequent chapters of the report document the entire process of schema designing, XML, XSL creation and provide sample of schemas and overview of the testing process. The source code of the project is stored in a git repository at \url{https://github.com/ish1289/MEng_Project_Final}.
+
+\chapter{Challenge Problems}
+
+Challenge problems are sets of prototypes of problems in software certification area. The software repository intends to store all the available and relevant challenge problems including both solved and unsolved challenge problems meaning that the solution is also saved if it is available. Challenge problems can be a part of several conferences held for the software community. For example, there are challenges called SAT challenge, CADE ATP  challenge, Pacemaker challenge, SMT COMP challenge, SV-COMP challenge \cite{SAT,CADE,Pacemaker,SMT,SV}, etc. have been offered as a part of various conferences and workshops. Each challenge has different dimensions. 
+
+The requirements and specifications depend upon the actual challenge problem and the committee who is putting forward this challenge. As the purpose of the repository is to collect all the challenge problems, a general schema which would be able to catch all the information of diverse challenge problems is needed. The schema provides a schematic structure to the repository in order to store challenge problems.  
+
+\section*{Schema Design} 
+The first step in schema designing process is to analyze different challenge problems and try to find out some attributes that are common in all the challenges. The collective attributes are various the parameters in different challenges that make it possible to preserve their information in a structured manner. 
+
+As specified earlier, the schema is designed using XSD. Thus, all the information is tracked in the form of tags using XMLs. The XMLs of various challenges are then validated against the same created schema. The schema portrays the general structure for all the challenges still allowing users to embed challenge problem specific information in the XMLs. 
+
+Meta-data in the form of attributes is collected. The meta-data depicts the information of the particular challenge. For example, in case of SAT challenge, its organization, location, tracks allowed, its assessment, hardware/software requirements, supporting documentation, available solutions, result details etc. is noted down. This is done for five challenge problems mentioned above. 
+
+The next task is to find common attributes using all the meta-datas. The common attributes eliminate all the challenge specific information, but keep the generic information such as location, supporting documentation, deadlines etc. The challenge specific information also can be stored in a generic format. For example, each challenge has different rules, assessment process and execution environment. Some challenges have benchmark problems which are sets of small challenges and they have to be solved before facing the actual challenge. However, all this challenge specific information can also be stored in a generic way. The schema provides tags to store generic information along with the tags which points to the links giving specific information about the challenges.
+
+The attribute list starts with the challenge name. The next attribute denotes the area of the challenge (SAT Solving, Automated Deduction, Object Oriented Systems etc.). Challenge description contains information such as description, associated conference, start and end date, series information and location. Each rule can be tagged with generic attributes like category, description, input/output requirements and links that point to specific information. All the supporting documentation is stored using document name, its description and the link to the document. All types of documents including books, online materials, tutorials and discussions can also be stored in this way. 
+
+Every challenge has different methods for assessment. However, some generic attributes can be used to store all the assessment related information for all the challenges. Assessment description, jury contact details (name, phone, email, web page link etc.), score details and link to specific information together describe the whole assessment information. The score details may contain different points for different levels. So, it is described using special attributes 'points' and 'description'. A challenge can be open for all people or academia or industry people. Participant tag along with the description denotes information about the participants. Some challenges have benchmarks as mentioned earlier. Each benchmark has a category, description, a specified format and a deadline. Specific information related to benchmarks is can be stored using links.
+
+Every challenge problem specifies a format in which a solution should be provided. It can be an executable solution, a formal specification or some other format. So, all the allowed solution forms are stored by allowed forms attribute. Input/output requirements for challenges are different for different challenges but can be captured by generic attributes input/output requirements. Execution environment details such as compilers, processors, compatible OS, allowed libraries for the solution are captured using respective tags. The execution environment in most challenge problems describes the test environment in which the solution would be tested.  The solutions for solved challenge problems are also stored in a similar way. Various deadlines information like name, description and date is captured using separate deadline tag. Most of the challenge problems allow the use of some external tools. This information is captured under tools. Results of the challenge problem if available are tagged under results. However, the results are stored in the form a link which points to the specific results information page. Some challenge problems also have information describing the changes from previous challenge. This information is captured using the description and the link to specific information if available for each change.    
+
+Attributes' names indicate the purpose of the attribute. Therefore, this listing of attributes provides a hierarchical structure to tag information about various challenge problems and thus makes it convenient to implement this schema design using XSD. The Listing \ref{lst:attCP} in appendix A shows all the attributes derived after analyzing some challenge problems.
+
+\section*{Implementation}
+The above schema design is implemented using XSD. The schema is designed to store a wide range of challenge problems and not for some specific challenge problem. Therefore, the schema contains many optional attributes which add the flexibility to the schema. For example, in case of contact details, any available contact such as email, phone of web page link can be stored. Additionally, it does not even impose the restriction on number of phones, emails or web page links and allows collecting any number of contacts. Similar restrictions are imposed on all other tags such as rules, supporting documents, assessment details, benchmarks, execution environment etc. This allows users to store maximum information using available details. For example, any number of rules can be stored even if some information is absent in the rules. One rule may contain input/output requirements while the other may only contain the description and the link. Hence, the schema is implemented in a flexible way by considering all the possibilities in a set of challenge problems. All the links are implemented using Xlink. This permits us to save the links along with the description of the link.    
+
+The whole schema is broken down into three schemas. The first one has all the elements common to the areas covered in this report meaning that it includes all the attributes common in the areas of challenge problems, course modules, libraries and tools. The second schema contains the elements required to tag detail information regarding execution environment. The third schema is the actual main schema for challenge problem that includes the above two schemas. An online tool is used to validate XMLs against this schema \cite{olXSD}.
+
+\subsection*{Common Schema}
+As described earlier, this schema represents all the common attributes to the three areas covered. This is done to avoid redundancy in implementing the entire schema. The common parts mainly contains information of common types like contacts, supporting documents, related links and tools which is common to all the three areas. This schema would be included in all the main schemas for challenge problems, course modules, libraries and tools. The Listing \ref{lst:common} displays the code for the common schema.     
+
+\lstinputlisting[label=lst:common,escapeinside={@}{@},caption = {Common Schema}]{Code/CommonSchema.txt}
+
+\subsection*{Schema for Execution Environment}
+This schema represents particularly the information specific to the execution environment for the challenge problems. It separates all the execution environment data from the other elements of challenge problems such as its description, assessment details, contacts, etc. This schema stores data like expected solution format, libraries, compilers, processors and OS permissible to solve a challenge and  all the elements needed to describe the required solution as well as existing solutions. The Listing \ref{lst:ExEn} shows the code for Execution Environment Schema.
+
+\lstinputlisting[label=lst:ExEn,escapeinside={@}{@},caption = {Execution Environment Schema}]{Code/ExecutionEnvironmentSchema.txt}
+
+\subsection*{Challenge Problem Schema}
+This is the main schema for challenge problems. The structure of the schema is according to the schema design described earlier. It includes the two supporting schemas viz. Common Schema and Execution Environment Schema explained in the above subsections. The Listing \ref{lst:CPSchema} displays the main elements in challenge problem schema.
+
+The entire code for schema can be found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_ChallengeProblems/Schema
+}
+
+\lstinputlisting[label=lst:CPSchema,escapeinside={@}{@},caption = {Challenge Problem Schema}]{Code/ChallengeProblemSchema.txt}
+
+\section*{Viewing Data in Browser}
+The data stored in the repository is in the form of XMLs that are validated against the above schema designed for Challenge Problems. Hence, some mechanism is needed to visualize those XMLs in the browser making them easy to interpret and read. This is done using XSLT. XSL is used to transform XML code into HTML code that is read by the browser and thus displays the contents of the XML file in the form of a html page. 
+
+The XSL for challenge problem reads the contents from the XML files according to the challenge problem schema and displays the information in a proper format if it is present in the XML file. An online tool is used to transform XML with XSL \cite{olXSL}. The tool accepts both the XML and XSL and then transforms XML code into HTML code understood by the browser. This html file is then viewed in the browser. Thus, XSL is used to display the data stored in the repository in readable format. The entire code for challenge problem XSL is found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_ChallengeProblems/Schema}
+\bigskip
+The testing of the above schemas and XSL along with a case study is described in detail later in the report. 
+
+\chapter{Course Modules}
+The software repository collects some course modules related to software certification area \cite{York,Waterloo, MaC,Victoria}. Thus, the main objective behind this schema designing process is to identify the essential elements in several programs offered in these areas. These elements should provide a schematic structure in order to be able to tag all the information related to various courses. Some examples of course modules are courses related to safety critical systems, embedded systems and real time systems. Hence, relevant course modules are those which are related to some systems containing software configuration. The sample set of course module used here contains nine course modules offered at York University, Canada, one course module offered at Victoria University, Australia and one at McMaster University, Canada.
+
+\section*{Schema Design}
+Similar to challenge problem schema design, the first step here is again to analyze different course modules and figure out common elements. The elements altogether represent all the information of the course modules. Note that here the main focus is to collect all time independent data. Therefore, the major goal of an analysis of various challenges is to find out attributes such as learning outcomes, aim of the module, pre-requisites and contents rather than focussing on deadlines and timings.  
+
+The course module is offered in some school/university. This information should be tagged followed by module name and module code. Then, the professors' details offering the course module should be stored. This is done by tagging name, description, available contacts like emails, phone and web site. The next tags capture the status of course module (core/optional/Active etc.) and whether it is full-time or part-time. Some courses are allowed for certain numbers of tracks i.e. are eligible for students in certain programs. Supporting information like number of credits, teaching term, feedback, description, location, results is also captured using the appropriate tags. 
+
+The major purpose in indexing such course modules is to get information about their aims, learning outcomes, topics covered in the courses, material used in the courses (books/online tutorials, links etc.). Information about the assessment is stored under different tag. All the assignments' and exam details using separate tags one for each assignment and exam under assessment tag. Some course modules use external tools. They are tagged under tools tag using appropriate sub-tags. Links are stored in most of the cases (aims/assessment details, tools etc.) to point to course specific information.     
+ 
+This schema is also implemented using XSD. Thus, all the attributes found by analyzing various course modules are organized in a hierarchical structure making the translation to XSD easy. The Listing \ref{lst:attCM} in appendix A shows all the attributes used to implement course module schema.
+
+
+\section*{Implementation}
+Similar to challenge problems, various course modules have different amount of information. So, the schema should be able to catch all the available information for the course modules. Naturally, the implemented schema has many optional elements. Some examples are feedback, workload, allowed tools, information about books etc. Some tags like aim, rule, book, pre-requisites etc. have no restrictions on number of elements. This allows users to record any number of elements. For example, there are many aims for a course module. Every aim is represented by "aim" tag inside outer tag "aims". Similarly, all rules, pre-requites, tools, learning outcomes, assignments and exams are recorded.    
+The schema implementation follows the schema discussed in an above section. It also includes the common schema implemented given in Listing \ref{lst:common}. This schema again covers the general structure to tag all the attributes of course modules in diverse areas while allowing saving some module specific data, as well. The schema is then tested with some sample course module XMLs by using an online XML schema validation tool \cite{olXSD}. The testing details are discussed later in the report.  The Listing \ref{lst:CMSchema} shows the code for course module schema.
+ 
+The complete code is found out at \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_Course_Modules/Schema}
+
+\lstinputlisting[label=lst:CMSchema,escapeinside={@}{@},caption = {Course Module Schema}]{Code/CourseModuleSchema.txt} 
+
+\section*{Viewing Data in Browser}
+Similar to challenge problems XMLs, course module XMLs also need a XSL to transform XML code into HTML code. This makes it able to be viewed in the browser. The XSL is implemented according to the course module schema given above. It checks if the information is present in the XML or not and then converts it into appropriate HTML code. The HTML code displays information in an eye pleasing and organized format. An online tool is used to transform XMLs using this XSL \cite{olXSL}. As discussed earlier, the tool accepts both XML and XSL, then transforms the given XML according to the XSL finally providing an HTML code as output. The code for course module XSL is found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_Course_Modules/XSLT}
+
+\bigskip
+
+The testing of the XSL with some sample XMLs is done and is later discussed in the report. 
+
+\chapter{Libraries and Tools}
+The third component of the repository saves the data related to libraries and tools. Libraries can be a part of the tool or can be verified using a tool. There is a many to one relationship between tools and libraries. Tools used for verification are considered here. The main aim here is to look for the certified libraries. Some of the certified libraries are verified by verification tools. So, storing information about the tools along with the libraries is useful considering the future scope in the area. Thus, the repository requires schemas to store some certified software libraries as well as some verification software tools used in the area of software certification. Libraries and tools are related to each other. So, they have some attributes like versions, overview, content files, extensions, contacts and documentation in common. However, as libraries are smaller than tools and can be a part of tool, tools have some different downloading ways and execution environment details. Libraries can also have attributes like examples, references and dependency details. Thus, it is helpful to store libraries and tools using separate schemas in the repository and hence two separate schemas for libraries and tools are implemented respectively.   
+
+\section*{Schema Design}
+The design process again begins with some sample libraries and tools \cite{Alea, DFC, MCHIP, BCastleJava, BSharp,Glibc,COQ,CADP,STL,NUSMV,SMPS}. Around eleven libraries and three tools are considered as reference material for this.  They are analyzed and attributes for the schemas are figured out. The schema for the library should be able to tag all the data related to a library such as its current versions, contents, downloading, tools used for compilation or verification, examples, references and dependencies if any. Along with these elements, some additional elements like execution environment, functionalities, getting the tool are added to the tools' schema. However, even though the tools' and the libraries' schemas contain some common elements they have their own attributes too and needs to be stored separately. Thus, they have their own attribute listings and implementations.
+\subsection*{Attributes Listing: Libraries}
+The analysis of some libraries such as Microchip certified libraries, COQ libraries, a PRL math library, glibc, Bouncy Castle library for Java and C sharp, SSL, STL etc. The attribute listing starts with library name which is a mandatory attribute followed by optional attribute overview. The high level overview is tagged using overview description attribute and link is used to navigate to detail information page of the library. All the available versions including current and previous are stored using tags version name, description and link to the version. Attribute status is used to indicate whether it's a current or previous version. Content files in the library are stored using name, description and link tags for each content file. Dependency details, examples, references, documentation and experimental library contents are captured in similar ways. This type of name, description hierarchy allows users to tag available information in a flexible way. Any number of links can be stored using link tags. Contributors are stored using the same way used in Challenge problems and Course modules. Information on how to download the library is captured using the tags description, size and links and compatible OS. The Listing \ref{lst:attL} in appendix A shows the elements for the libraries' schema.
+
+\subsection*{Attributes Listing: Tools}
+After analyzing some tools like COQ, CADP, NuSMv, etc \cite{COQ,CADP,NUSMV}. Tools and attributes have some attributes in common. Content files, version details, name, documentation, related links, extensions, contacts, related tools and features are captured using the similar way. All the generic information is stored using mainly name and description tags and detail information is tagged using links. The major difference between the tools' and libraries' schema is the download methods and execution environment. Execution environment contains the languages used in the tool, input requirements, compatible OS, compiler and processor requirements. OS, compiler and processor requirements are stored using appropriate attributes like name, memory, version and description for each compiler, OS or processor. There can be three downloading formats for tools. Either it can be downloaded as source code or a binary file or in some other format. For source code only size, description and link is needed. However, for binary files compatible OS is also stored. Sometimes, there are some other ways to download the tools. This information is caught using description and links. The Listing \ref{lst:attT} in appendix A shows the elements for the tools' schema.
+ 
+\section*{Implementation}
+As mentioned earlier, libraries and tools are related to each other. So, naturally they share some common elements which can be implemented separately. Moreover, both of these schemas also include the common schema discussed earlier in Listing \ref{lst:common}. Similar to challenge problems and course modules, these schemas also contain the optional attributes. This allows the user to store only available information and adds flexibility. Adding no restrictions on the number of elements permits the schema to store multiple elements like compilers, processors, versions, documentation, content files etc. The latter chapter talks about the testing of these schemas in detail. 
+\subsection*{Common Schema for Libraries and Tools}
+The schema mainly includes implementation of a few common elements such as version details, contents' details and extensions. The Listing \ref{lst:CSLT} shows the common schema code for libraries and tools.
+\lstinputlisting[label=lst:CSLT,escapeinside={@}{@},caption = {Common Schema for Libraries and Tools}]{Code/CommonSchemaLibrariesTools.txt}  
+\subsection*{Schema for Libraries}
+The Listing \ref{lst:SL} contains the implementation for libraries' schema. 
+\lstinputlisting[label=lst:SL,escapeinside={@}{@},caption = {Schema for Libraries}]{Code/LibrariesSchema.txt}
+\subsection*{Schema for Tools}
+The Listing \ref{lst:TL} gives the implementation for tools' schema. 
+\lstinputlisting[label=lst:TL,escapeinside={@}{@},caption = {Schema for Libraries}]{Code/ToolsSchema.txt}
+
+\bigskip
+The complete code for libraries' and tools' schema can be found out \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_Libraries_Tools/Schema}
+\section*{View Data in Browser}
+Similar to challenge problems and course modules, libraries and tools XMLs are viewed in the browser with the help of XSLs. 
+
+XSLs for both libraries and tools are located at 
+\url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_Libraries_Tools/XSLT}
+
+
+\chapter{Testing}
+
+The testing begins with preparing some sample XMLs for all the areas discussed. The whole schema design, implementation, XSLs implementation and testing process follow an iterative approach. The entire three areas viz. challenge problem, course modules and libraries and tools are tested individually. However, they follow the same testing process. 
+ 
+\section*{Test Cases}
+After the schema design and implementation, an XML is prepared from a sample challenge problem, course module, library and a tool. This XML is validated against the first version of the schema. Some test cases described in the table \ref{table:test} are tested to check the strength, validity and effectiveness of the schema. According to the results, improvements are made to the schema. This process is repeated till the schema is tested against reasonable number of samples and passes all the test cases correctly without the further need of modification to an existing schema. 
+
+The set of XML samples is then transformed using the XSL designed according to the finally tested schema. The HTML file produced as an output is tested against some test cases given in table \ref{table:test}. This again follows the iterative approach till all the test cases are satisfied.
+
+The table \ref{table:test} lists down the test cases used for both XSDs and XSLs of challenge problems, course modules, libraries and tools.
+%\thispagestyle{empty}
+%\vspace*{-\baselineskip}
+\begin{table}
+\begin{tabular}{| l | p{2cm} | p{5cm} | p{2cm} | p{1cm} |}
+\hline \textbf{Sr.No.} & \textbf{Test Case Name} & \textbf{Description} & \textbf{Applicable For} & \textbf{Result} \\ \hline 1. & Information coverage & check whether all the information is covered & XSD/XSL & Passed \\ 
+\hline 2. & Appropriate attribute tagging & All the information should be tagged appropriately.  & XSD & Passed  \\  
+\hline 3.& Allowance of specific information  & Specific but important information for the challenge should also be included without affecting the general structure of the schema & XSD & Passed \\ 
+\hline 4.& Flexibility & Not all the elements are present in all the samples. The schema should allow users to insert only available information. Checking the use of optional attributes. & XSD/XSL & Passed. \\ 
+\hline 5. & Attribute coverage & Testing on reasonable number of samples to verify all the attributes in the schema or XSL are utilized & XSD/XSL & Passed \\  
+\hline 6. & Common schema & Use of common schema to implement common elements & XSD & Passed \\  
+\hline 7. & Look and feel for XSL & Checking whether all the information when viewed in the browser is properly aligned and look and feel of HTML page & XSL & Passed \\ 
+\hline
+\end{tabular}
+\caption[Table caption text]{Test Cases}
+\label{table:test}
+\end{table}
+\pagebreak
+These test cases are applicable to all the schemas and all the scenarios. However, the use of test cases can be illustrated with the help of a small example. The first design of the challenge problem schema captured all the rules using just the rule tag unlimited times. so, the XML file would contain the structure $<rules><rule></rule><rule></rule><rules>$. On the very first sample challenge, it worked fine for all the test cases. The schema provided mainly flexibility, information coverage. However, later while testing it on some other challenge where rules had a lot of specific information, test cases were failed. For example, the first test case "information coverage" failed because, the detailed information about the rule wasn't stored by the schema. The schema could store only the high level description of the rules. The second and third test cases were failed because the schema had to store all the information only as a description. So, there was no other way to insert information about the input/output requirements or rule background or to store links. This was naturally hampering the flexibility of the schema though it was allowing multiple rules. Thus, fourth test case also failed.
+
+The above problem was fixed by changing the structure of the rule tag. More tags were added under the rule tag. This permitted the users to insert bigger rules' information in more categorized manner. Rule category was added to indicate the purpose of the rule. Rule description would store the main information about the rule. Some rules may contain input/out requirements. Appropriate tags and inner tags were added to catch this information. Rule information that is challenge specific is considered as detailed information. Links tag ia added using XLink to store the links. Any number of links can be stored for a rule. Any of these inner tags category, links, input/output requirements are kept optional. So, if the rule is simple, only its description can be stored. If the rule contains only description and the link or the number of links, this can be caught as well. This new schema with new rule structure is again tested against the test cases using old and new sample challenge problems. All the test cases were passed as the schema covers all the information. It covers all the information, tags information properly, stores specific information and provides flexibility. In this way, the testing is carried out for all the elements in the schemas until all the test cases are satisfied on all the sample data sets.    
+\section*{Case Study}
+This section provides a sample XML and its transformed HTML code for a challenge problem. The XMLs illustrate how the actual information is stored in the repository using the newly designed schemas and HTML files depict how the XMLs are transformed and seen in the browser using the newly implemented XSLs according to the corresponding schemas. 
+
+Note that the report just provides one sample XML and HTML for a challenge problem. However, the schemas and XSLs are tested against reasonable number of XMLs in order to verify their validity and effectiveness and similarly XMLs and HTMLs can be obtained for other categories and data samples. The whole set of XMLs and HTMLs for all the categories is stored in a git repository and can be viewed at \url{https://github.com/ish1289/MEng_Project_Final}
+
+The \url{https://github.com/ish1289/MEng_Project_Final/blob/master/XmlSchema_ChallengeProblems/Sample_Xmls/XML_Challenge_Problem_SAT_Challenge.xml} gives XML for SAT challenge. The XML is prepared by extracting the information from SAT challenge website and then tagging it according to the challenge problem schema given in the Listing \ref{lst:CPSchema} \cite{SAT}. The XML is then validated using the online tool against the challenge problem schema \cite{olXSD}.
+
+\chapter{Conclusion}
+Software certification refers to the process of certification of the software part in the system. The report talked about some approaches to accomplish this. Component reusability is now getting popular in software certification. However, the component to be reused needs to have the appropriate certification and certification management system. One of the challenges in this area is the management of useful information regarding the certification. Therefore, the design of the software repository which would manage information related to various areas around software certification, mainly focusing on the three areas viz. challenge problems, course modules and libraries and tools is proposed here.  
+
+Future tasks for the repository can be categorized into two streams. First one would be to find more samples for all the three components discussed here. A major challenge for the work presented in the report was data gathering. It is a challenging task to find the relevant data samples. This is true for all the three areas. Hence, the next job is to find some more relevant challenge problems, course modules, libraries and tools. The second part of the future task is to create and implement schema for the rest of the two areas of the repository. The schemas can be designed and implemented by following the same methods illustrated in the report. This would complete the implementation of the proposed repository.  
+
+Finally, to conclude, the report provided an effective mechanism to index some available material for the three areas around software certification using standard technologies such as XML, XSD and XSL.
+
+\appendix
+\chapter{Attribute Listings}
+\lstinputlisting[label=lst:attCP,escapeinside={@}{@},caption = {Attributes for Challenge Problem Schema}]{Code/AttributeListingChallengeProblem.txt}
+
+\lstinputlisting[label=lst:attCM,escapeinside={@}{@},caption = {Attributes for Course Modules Schema}]{Code/AttributeListingCourseModule.txt} 
+
+\lstinputlisting[label=lst:attL,escapeinside={@}{@},caption = {Attributes for Libraries' Schema}]{Code/AttributeListingLibraries.txt} 
+
+\lstinputlisting[label=lst:attT,escapeinside={@}{@},caption = {Attributes for Tools' Schema}]{Code/AttributeListingTools.txt}  
+
+\bibliographystyle{alpha}
+\bibliography{References_Report_Ishwaree_Argade}
+\end{document}
