@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!--Importing Common XMLSchema-->
+<xs:include schemaLocation="D:\MEng_Docs\MEng_Docs\Project\Common_Schema\XmlSchema_Common.xsd"/> 
+<xs:include schemaLocation="D:\MEng_Docs\MEng_Docs\Project\XmlSchema_Libraries\XMLSchema_Common_Libraries_Tools.xsd"/>
+<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>  
+<xs:element name="verificationTools">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="verificationTool"  maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="toolName" type="xs:string"></xs:element>
+            <xs:element name="toolOverview" type="descriptionType" minOccurs="0"></xs:element>
+            <xs:element name="availableVersions" type="versionsType" minOccurs="0"></xs:element>
+            <xs:element name="Functionalities" type="functionalitiesType" minOccurs="0"></xs:element>
+            <xs:element name="intendedUsers" type="intendedUsersType" minOccurs="0"></xs:element>
+            <xs:element name="experimentalContentsOrExtensions" type="exContentsType" minOccurs="0"></xs:element>
+            <xs:element name="contacts" type="contactsType" minOccurs="0"></xs:element>
+            <xs:element name="contentFiles" type="contentFilesType" minOccurs="0"></xs:element>
+            <xs:element name="supportingDocuments" type="supportingDocumentsType" minOccurs="0"></xs:element>
+            <xs:element name="relatedLinks" type="relatedLinksType" minOccurs="0"></xs:element> 
+            <xs:element name="relatedTools" type="toolsType" minOccurs="0"></xs:element>
+            <xs:element name="howToObtain" type="howToObtainType" minOccurs="0"></xs:element>
+            <xs:element name="executionEnvironment" type="executionEnvironmentType" minOccurs="0"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

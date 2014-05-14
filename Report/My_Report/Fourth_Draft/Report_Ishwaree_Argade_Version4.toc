@@ -1,0 +1,31 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {chapter}{\numberline {2}Global Requirements}{5}
+\contentsline {chapter}{\numberline {3}Overview of Software Repository}{7}
+\contentsline {section}{\numberline {3.1}Challenge Problems}{8}
+\contentsline {section}{\numberline {3.2}Course Modules}{8}
+\contentsline {section}{\numberline {3.3}Certified Libraries and Tools}{9}
+\contentsline {chapter}{\numberline {4}Methodology}{10}
+\contentsline {chapter}{\numberline {5}Challenge Problems}{12}
+\contentsline {section}{\numberline {5.1}Schema Design}{13}
+\contentsline {section}{\numberline {5.2}Implementation}{15}
+\contentsline {subsection}{\numberline {5.2.1}Common Schema}{16}
+\contentsline {subsection}{\numberline {5.2.2}Schema for Execution Environment}{19}
+\contentsline {subsection}{\numberline {5.2.3}Challenge Problem Schema}{23}
+\contentsline {section}{\numberline {5.3}Viewing Data in Browser}{24}
+\contentsline {chapter}{\numberline {6}Course Modules}{26}
+\contentsline {section}{\numberline {6.1}Schema Design}{27}
+\contentsline {section}{\numberline {6.2}Implementation}{28}
+\contentsline {section}{\numberline {6.3}Viewing Data in Browser}{30}
+\contentsline {chapter}{\numberline {7}Libraries and Tools}{31}
+\contentsline {section}{\numberline {7.1}Schema Design}{33}
+\contentsline {subsection}{\numberline {7.1.1}Attributes Listing: Libraries}{33}
+\contentsline {subsection}{\numberline {7.1.2}Attributes Listing: Tools}{34}
+\contentsline {section}{\numberline {7.2}Implementation}{34}
+\contentsline {subsection}{\numberline {7.2.1}Common Schema for Libraries and Tools}{35}
+\contentsline {subsection}{\numberline {7.2.2}Schema for Libraries}{36}
+\contentsline {subsection}{\numberline {7.2.3}Schema for Tools}{38}
+\contentsline {chapter}{\numberline {8}Testing}{40}
+\contentsline {section}{\numberline {8.1}Test Cases}{40}
+\contentsline {section}{\numberline {8.2}Case Study}{43}
+\contentsline {chapter}{\numberline {9}Conclusion}{45}
+\contentsline {chapter}{\numberline {A}Attribute Listings}{46}
