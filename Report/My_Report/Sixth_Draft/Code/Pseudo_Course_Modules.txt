@@ -1,0 +1,67 @@
+\\ Include common schema
+
+abstract modules : \\ Root Element 
+  abstract module : [1..]
+    School/University : string?
+    Module Name : string 
+    Module Code : string?
+    Professors : ContactsType?
+    Status : string?
+    Required For : string? 
+    abstract Allowed Tracks : ?
+       Track : string+
+    Number of Credits : string?
+    abstract Teaching Term : ?
+       Term : string+
+    abstract pre-requisites : ? 
+       pre-requisite : string+
+    description : string?
+    abstract aims : ?
+       aim : string+ 
+    abstract LearningOutcomes : ? 
+      LearningOutcome : string+
+    abstract Rules : ?
+      Rule: string+
+    abstract Workload : ? 
+       Total Lecture Hours :string?
+       Each Lecture Time : string?
+       Total Private Study Time : string?
+       Assessment Time : string?
+    abstract Feedback : ?
+      description :string?
+      Link : Xlink*
+    abstract Content : ? 
+      abstract Topics Covered : ?
+         description : string?
+         Link : XLink*
+      abstract Teaching Material : ?
+       abstract Material : [1..]
+         Name : string?
+         description : string? 
+         Type : string ?
+         Link : XLink*
+      abstract Books : ?
+        abstract Book : [1..]
+          Name :string?
+          Type : string? 
+          Author : string[1..]
+          Title : string? 
+          Publisher : string?
+          Year : year? 
+       start Date : date?
+       end Date : date?
+       abstract Assessment : ?
+        description : string?
+        abstract assignments : ? 
+         abstract assignment : [1..]
+           description : string?
+           weight : string? 
+           Link : XLink*
+        abstract exams : ?
+          abstract exam : [1..]
+            description : string? 
+            weight : string? 
+            Link : XLink*
+     AllowedTools: ToolsType?
+     RelatedLinks : RelatedLinksType?
+     Location :string?
