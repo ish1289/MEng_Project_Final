@@ -1,0 +1,22 @@
+<!--Common Schema for libraries and Tools-->
+<!--Contains complex Types common for both the schemas-->
+<VersionType> <!--ComplexType-->
+  <Version status="Current/Optional">
+  <!-- Complex Type. No limit on maximum occurrences, but minimum occurrence should be 1-->
+  <!--Attribute-> Status with value = Current/previous-->
+    <name/><!--String Type Optional-->
+    <year/><!--String Type Optional-->
+    <description/><!--String Type Optional-->
+    <link/><!--XLink Optional and unbounded-->
+  </Version>
+</VersionType>
+<ExContentsType><!--ComplexType-->
+  <Description/> <!--String Type Optional-->
+  <Content/> 
+  <!--Description Type. Minimum Occurrence : 1 Maximum Occurrences : Unbounded-->
+</ExContents>
+<ContentFilesType><!--ComplexType-->
+  <Description/> <!--String Type Optional-->
+  <ContentFile/> 
+  <!--Description Type. Minimum Occurrence : 1 Maximum Occurrences : Unbounded-->
+</ContentFiles>

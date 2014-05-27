@@ -1,0 +1,69 @@
+<!--Include Common Schema and Common schema for libraries and tools-->
+<Tools>
+<!--Root element. Complex Type-->
+  <Tool>
+  <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+    <Name/> <!--String Type. Minimum Occurrence : 1-->
+    <Overview/> <!--Description Type. Optional-->
+    <AvailableVersions/>  <!--Versions Type-->
+    <Functionalities/Features>
+        <Function/> <!--Description Type. Optional-->
+    </Functionalities/Features>
+   <Intended Users>
+     <User/> <!--String Type, Maximum Occurrences : Unbounded-->
+   </Intended Users> 
+   <Extensions/> <!--Description Type. Optional-->
+   <Contacts/> <!--Contacts Type, Optional-->
+   <Contents/> <!--Contents Type, Optional-->
+   <How To Obtain> <!--Complex Type Optional-->
+	<Source> 
+        <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+	  <Size/> <!--String Type, Optional-->
+	  <Description/> <!--String Type, Optional-->
+	  <Link/>
+        </Source>
+	<Binaries> 
+        <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+	  <Binary> 
+	     <Description/> <!--String Type, Optional-->
+	      <Format (OS)/><!--String Type, Optional-->
+	      <Size/><!--String Type, Optional-->
+	      <Link/>
+          </Binary>
+         <Others/> 
+         <!-- Description Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+   </How To Obtain>
+   <Execution Environment> 
+	<Languages Used>
+	   <Language/>
+           <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+         </Language Used> 
+	<Input Requirements>
+          <Input Requirement/>
+          <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+        </Input Requirements>
+	<Compatible Compilers>
+           <Compiler/>
+          <!-- Description Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+        </Compatible Compilers>
+	<Compatible Processors> 
+	  <Processor> 
+          <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+	    <Name/> <!--String Type, Optional-->
+	    <Memory/> <!--String Type, Optional-->
+	    <Description/><!--String Type, Optional-->
+          </Processor>
+         </Compatible Processors> 
+	 <Compatible OS> 
+	   <OS>
+           <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+	     <Name/> <!--String Type Minimum Occurrence : 1-->
+	     <Version/> <!--String Type, Optional-->
+	     <Distribution/><!--String Type, Optional-->
+          </OS> 
+         </Compatible OS>
+	<Related Tools/> <!--Tools Type-->
+	<Documentation/> <!--Documentation Type-->
+	<Related Links/> <!--Related Links Type-->
+ </Tool>	
+</Tools>

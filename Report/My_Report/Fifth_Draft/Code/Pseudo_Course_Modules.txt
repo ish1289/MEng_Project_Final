@@ -1,0 +1,97 @@
+<!--Include common schema-->
+<Modules>
+<!--Root element. Complex Type-->
+  <Module>
+<!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ <School/University/> <!--String Type. Optional-->
+ <ModuleName/> <!--String Type. Minimum Occurrence : 1--> 
+ <ModuleCode/> <!--String Type. Optional-->
+ <Professors/Lecturers/> <!--ContactType. Optional-->
+ <Status (Core/Optional)/> <!--String Type. Optional-->
+ <Required For (Full-time/part-time)/> <!--String Type. Optional-->
+ <AllowedTracks> <!--ComplexType. Optional-->
+   <Track/>
+  <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ </AllowedTracks>  
+ <Number of credits/> <!--String Type. Optional-->
+ <TeachingTerm> <!--ComplexType. Optional-->
+   <Term/> 
+   <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ <TeachingTerm> 
+ <Pre-requisites> <!--ComplexType. Optional-->
+    <Pre-requisite/>
+    <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ </Pre-requisites> 
+ <Description/> <!--String Type. Optional-->
+ <Aims> <!--ComplexType. Optional-->
+   <Aim>
+   <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+     <Description/> <!--String Type. Optional-->
+     <Link/> <!-- XLinks. Maximum Occurrences : Unbounded, Optional-->
+   </Aim>
+ </Aims>
+ <LearningOutcomes> <!--ComplexType. Optional-->
+   <LearningOutcome/> 
+   <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ </LearningOutcomes>
+ <Rules> <!--ComplexType. Optional-->
+   <Rule/>
+   <!-- String Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ </Rules> 
+ <Workload> <!--ComplexType. Optional-->
+   <Total lecture hours/> <!--String Type. Optional-->
+   <Each lecture time/> <!--String Type. Optional-->
+   <Total Private study time/> <!--String Type. Optional-->
+   <Assessment Time/> <!--String Type. Optional-->
+ </Workload> 
+ <Feedback> <!--ComplexType. Optional-->
+    <Description/> 
+    <Link/>
+ </Feedback>
+ <Content> <!--ComplexType. Optional-->
+   <TopicsCovered> <!--ComplexType. Optional-->
+     <Description/> 
+      <Link/>
+   </TopicsCovered> 
+   <TeachingMaterial> <!--ComplexType. Optional-->
+     <Name/> <!--String Type Optional--> 
+     <description/> <!--String Type Optional--> 
+     <Type> <!--String Type Optional--> 
+     <Link/>
+   </TeachingMaterial> 
+   <Books> <!--ComplexType. Optional-->
+    <Book>
+     <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+     <Name/> <!--String Type Minimum Occurrences : 1--> 
+     <Type> 
+     <!--String Type Optional--> 
+     <Author/> <!--String Type Optional and unbounded--> 
+     <Title/> <!--String Type Optional--> 
+     <Publisher/> <!--String Type Optional--> 
+     <Year/> <!--Year Type  Optional--> 
+    </Book>
+   </Books>
+  <startDate/>
+  <endDate/>
+  <Assessment> <!--ComplexType. Optional-->
+    <Description/> <!--String Type Optional--> 
+    <Assignments> <!--ComplexType. Optional-->
+	<Assignment> <!--ComplexType. Optional-->
+	   <Description/> <!--String Type Optional--> 
+	    <weight/> <!--String Type Optional--> 
+	    <Link/>
+        </Assignment>
+    </Assignments>
+    <Exams> <!--ComplexType. Optional-->
+       <Exam> <!--ComplexType. Optional-->
+	  <Description/> <!--String Type Optional--> 
+	  <weight/> <!--String Type Optional--> 
+	  <Link/>
+       </Exam>
+    </Exams> 
+    <AllowedTools/>
+    <Location/> <!--String Type Optional--> 
+    <Results/> <!--ResultsType -->
+  <Related Links/> <!--RelatedLinks Type-->
+</Module>
+</Modules>

@@ -1,0 +1,47 @@
+<!--Schema Common to Challenge Problems, Course Modules, Certified Libraries and Tools-->  
+<!--Contains declaration of all common types-->
+<Contacts> 
+<!-- Complex type. Stores all the contact details-->
+  <Contact> 
+   <!-- Complex Type. No limit on maximum occurrences, but minimum Occurrences should be 1 if <Contacts> tag is present-->
+   <name></name> <!-- Stored as string. Minimum Occurrence is zero -->
+   <description></description> <!-- Stored as string and optional-->
+   <Phone></Phone> 
+   <!-- Type is string. Minimum Occurrence allowed : 0 and maximum Occurrence unbounded-->
+   <email></email> 
+   <!-- Type is string. Minimum Occurrence allowed : 0 and maximum Occurrence unbounded-->
+   <link></link> 
+   <!-- Stored using Xlink. Minimum Occurrence allowed: 0 and maximum Occurrence unbounded-->
+  </Contact>
+</Contacts> 
+<tools> <!-- Stores all relevant tools details-->
+ <tool> 
+ <!-- Complex Type. No limit on maximum Occurrence, but minimum Occurrences should be 1 if <tools> tag is present-->
+ <name></name> <!--Stored as string-->
+ <description></description> <!-- Stored as string. Optional element-->
+ <link></link> 
+ <!-- Stored using Xlink. Minimum Occurrence allowed: 0 and maximum Occurrence unbounded-->
+ </tool>
+</tools>
+<documentation> <!-- Tags all the documentation information-->
+ <document> 
+ <!-- Complex Type. No limit on maximum Occurrence, but minimum Occurrences should be 1 if <documents> tag is present-->
+  <name></name>
+  <description><description>
+  <link></link>
+ <document>
+</documentation>
+<relatedLinks> <!-- Tags all the links specific to the area-->
+ <Link></Link>
+ <!-- Stored using Xlink. Minimum Occurrence allowed: 0 and maximum Occurrence unbounded-->
+</relatedLinks>
+<results> 
+<!-- Stores all the specific results information in the form of links -->
+<link></link> 
+<!-- Stored using Xlink. Minimum Occurrence allowed: 0 and maximum Occurrence unbounded-->
+</results>
+<DescriptionType><!--ComplexType-->
+ <name/> <!--String Type Optional-->
+ <Description/> <!--String Type Optional-->
+ <link/> <!--XLink Optional and unbounded--> 
+</DescriptionType>

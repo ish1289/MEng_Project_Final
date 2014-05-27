@@ -1,0 +1,94 @@
+<!--Include common schema and execution environment schema-->
+<ChallengeProblems> 
+<!--Root element. Complex Type-->
+<Challenges> 
+<!-- Complex Type. No limit on maximum occurrences, but minimum occurrence should be 1-->
+  <ChallengeName></ChallengeName> <!--Stored as string-->
+  <Area><!--Stored as string. Optional Element-->
+  <ChallengeDescription><!--ComplexType--> 
+	<Description/> 
+        <!--Stored as string. Optional element--> 
+	<ChallengeDate> 
+        <!--ComplexType. Optional Element--> 
+		<To/> <!--Stored as Date-->
+		<From/> <!--Stored as Date-->
+        </ChallengeDate>
+	        <ChallengeLocation/> 
+                <!--String Type. Optional-->
+	        <AssociatedConference/> 
+                <!--String Type. Optional-->
+	        <Part of Series/> 
+                <!--String Type. Optional-->
+  </ChallengeDescription>
+  <Rules> <!--ComplexType--> 
+     <Rule> 
+     <!-- Complex Type. No limit on maximum occurrences, but minimum occurrence should be 1-->
+        <RuleCategory/> 
+     <!--Stored as string. Minimum occurrence : 1-->
+         <Description/> 
+     <!--Optional element. Implemented as string-->
+	  <Input Requirements/> 
+     <!--Implemented using input requirement Type discussed earlier. Optional-->
+	  <Output Requirements/> 
+     <!--Implemented using output requirement Type discussed earlier. Optional-->
+          <Link/> 
+     <!--Stored using XLink. Minimum Occurrence : 0 Maximum Occurrences: Unbounded-->
+     </Rule>
+  </Rules> 
+ <Supporting Documents/> 
+ <!--Supporting Documents Type. Optional-->
+ <Year/> 
+ <!--Implemented as Year. Optional-->
+ <AssessmentDescription> 
+   <!--ComplexType. Optional-->
+    <Description/> 
+    <!--Stored as string. Optional-->
+	<Link/> 
+        <!--Stored using XLink. Minimum Occurrence : 0 Maximum Occurrences: Unbounded-->
+	<Jury/> 
+        <!--Implemented as ContactType. Optional-->
+	<ScoreDetails> <!--ComplexType. Optional-->
+	   <Score> 
+           <!-- Complex Type. No limit on maximum occurrences, but minimum occurrence should be 1-->
+	      <Points/> <!--Implemented as string. Optional-->
+	      <Description/> <!--Implemented as String. Optional-->
+           </Score>
+        </ScoreDetails>
+ </AssessmentDescription> 
+ <Participants> <!--ComplexType. Optional-->
+    <Participant/> 
+    <!--Stored as string. Maximum Occurrence unbounded-->
+    <Link/> 
+    <!--Stored using XLink. Minimum Occurrence : 0 Maximum Occurrences: Unbounded-->
+ </Participants>
+ <Benchmarks> <!--ComplexType. Optional-->
+   <Benchmark>  
+   <!-- Complex Type. No limit on maximum occurrences, but minimum occurrence should be 1-->
+     <Categories/> <!--String Type. Optional-->
+     <Description/> <!--String Type. Optional-->
+     <Format/> <!--String Type. Optional-->
+     <Timeline/> 
+     <!-- Stored as Duration. Optional element-->
+     <Link/> 
+     <!--Stored using XLink. Minimum Occurrence : 0 Maximum Occurrences: Unbounded-->
+ </Benchmarks> 
+ <Expected Solution/> 
+ <!--Expected Solution Type. Optional-->
+ <Results/> 
+ <!--Results Type. Optional-->
+ <Changes> <!--ComplexType. Optional--> 
+	<Change> 
+        <!-- Complex Type. No limit on maximum occurrences, but minimum occurrence should be 1-->
+		<Description/> <!--String Type. Optional-->
+		<Link/>
+        </Change>
+ </Changes> 
+<Solutions>  <!--ComplexType. Optional-->
+	<Format/> <!--String Type. Optional-->
+	<Description/> <!--String Type Optional-->
+	<Input Requirements/> <!--Input Requirements Type. Optional-->
+	<Output Requirements/> <!-- Output Requirements Type. Optional-->
+	<Execution Environment/> <!-- Execution Environment Type. Optional-->
+</Solutions> 
+</Challenges>
+</ChallengeProblems>

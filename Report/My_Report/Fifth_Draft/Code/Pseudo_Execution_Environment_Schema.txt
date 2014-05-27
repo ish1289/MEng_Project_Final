@@ -1,0 +1,70 @@
+<!-- Schema describes all the types required to store the execution environment details for challenge problems-->
+<inputRequirements> 
+<!-- Complex Type. Stores the entire input requirement specified for the challenge problems-->
+  <inputRequirement></inputRequirement>
+  <!-- Stored as string. Minimum Occurrence is one but maximum Occurrences unbounded-->
+</inputRequirements>
+<outputRequirements> 
+<!-- Complex Type. Stores the entire output requirement specified for the challenge problems-->
+  <outputRequirement></outputRequirement>
+  <!-- Stored as string. Minimum Occurrence is one but maximum Occurrences unbounded-->
+</outputRequirements>
+<libraries>
+  <library>
+   <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+    <name></name> <!-- Stored as string-->
+    <description></description> <!--Optional Element-->
+    <link></link> 
+    <!-- Stored using XLink. Minimum Occurrences: 0 Maximum Occurrences: Unlimited-->
+  </library>
+</libraries>
+<compilers>
+ <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ <compiler>
+  <name><name> <!-- Stored as string-->
+  <description><description> <!--Optional Element-->
+ </compiler>
+</compilers>
+<processors>
+<!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ <processor>
+  <name></name> <!-- Stored as string-->
+  <memory></memory> <!--Stored as string-->
+  <description></description> <!--Optional Element-->
+  </processor>
+</processors>
+<OSUsed>
+<!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+  <OS>
+    <name></name> <!-- Stored as string-->
+    <version></version> <!-- Stored as string-->
+  </OS>
+</OSUsed>
+<deadlines>
+<!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+ <deadline>
+  <name></name> <!-- Stored as string-->
+  <acutalDeadline></actualDeadline> <!-- Stored as Datetime type-->
+ </deadline>
+</deadlines>
+<ExecutionEnvironment> <!-- Complex Type-->
+  <description></description>  <!-- Stored as string. Optional Element-->
+  <libraries></libraries> <!-- Is of libraries type Discussed above. Optional element-->
+  <compilers></compilers> <!-- Is of compilers type Discussed above. Optional element-->
+  <processors></processors> <!-- Is of processors type Discussed above. Optional element-->
+  <OSUsed></OSUsed> <!-- Is of OS type Discussed above Optional element-->
+</ExecutionEnvironment>
+<ExpectedSolution>
+ <AllowedForms></AllowedForms> 
+ <!-- Optional Element. Stored as string. --> 
+ <inputRequirements></inputRequirements> 
+ <!-- Is of inputRequirements type Discussed above Optional element-->
+ <outputRequirements></outputRequirements> 
+ <!-- Is of outputRequirements type Discussed above Optional element-->
+ <ExecutionEnvironment></ExecutionEnvironment> 
+ <!--Complex Type Defined above. Optional element-->
+ <deadlines></deadlines> 
+ <!-- ComplexType Defined above Optional element-->
+ <allowedSubmissions><allowedSubmissions> 
+ <!--Stored as string. Optional element-->
+</ExpectedSolution>  

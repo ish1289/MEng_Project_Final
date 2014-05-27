@@ -1,0 +1,32 @@
+<!--Include Common Schema and Common schema for libraries and tools-->
+<Libraries> 
+<!--Root element. Complex Type-->
+  <Library> 
+  <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+    <Name/><!--String Type. Minimum Occurrence : 1-->
+    <Overview/> <!--Description Type. Optional-->
+    <Versions/> <!--Versions Type-->
+    <Experimental Library Contents (Similar to Extensions)/>
+    <Contributors/> <!--Contacts Type-->
+    <Content Files/> <!--Description Type. Optional-->
+    <Downloads> <!--ComplexType-->
+     <Download> 
+     <!-- Complex Type. No limit on maximum Occurrences, but minimum Occurrence should be 1-->
+      <Description/> <!--String Type. Optional-->
+       <Format (OS)/> <!--String Type. Optional-->
+      <Size/> <!--String Type. Optional-->
+      <Link/> 
+     </Download>
+    </Downloads>
+    <Required Tools for compilation/> <!--Tools Type-->
+    <Documentation/> <!--Documentation Type-->
+    <Dependency details> 
+      <Dependency/> <!--Description Type. Optional-->
+    </Dependency Details>
+    <Examples>
+     <Example/> <!--Description Type. Optional-->
+    </Examples>
+    <Related Links/> <!--Related Links Type-->
+    <References/> <!--Description Type. Optional-->
+  </Library>
+</Libraries>
