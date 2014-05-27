@@ -159,16 +159,14 @@ This schema represents particularly the information specific to the execution en
 \subsection{Challenge Problem Schema}
 This is the main schema for challenge problems. The structure of the schema is according to the schema design described earlier. It includes the two supporting schemas viz. Common Schema and Execution Environment Schema explained in the above subsections. The Listing \ref{lst:PCPSchema} displays the main elements in challenge problem schema and the listing \ref{lst:CPSchema} shows a part of the implementation.
 
-The entire code for schema can be found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_ChallengeProblems/Schema
-}
+The entire code for schema can be found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_ChallengeProblems/Schema}
 
 \lstinputlisting[label=lst:PCPSchema,escapeinside={@}{@},caption = {Pseudo Code : Challenge Problem Schema}]{Code/Pseudo_Challenge_Problems.txt}
 
 \section{Viewing Data in Browser}
 The data stored in the repository is in the form of XMLs that are validated against the above schema designed for Challenge Problems. Hence, some mechanism is needed to visualize those XMLs in the browser making them easy to interpret and read. This is done using XSLT. XSL is used to transform XML code into HTML code that is read by the browser and thus displays the contents of the XML file in the form of a html page. 
 
-The XSL for challenge problem reads the contents from the XML files according to the challenge problem schema and displays the information in a proper format if it is present in the XML file. An online tool is used to transform XML with XSL \cite{olXSL}. The tool accepts both the XML and XSL and then transforms XML code into HTML code understood by the browser. This html file is then viewed in the browser. Thus, XSL is used to display the data stored in the repository in readable format. The entire code for challenge problem XSL is found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_ChallengeProblems/Schema}
-\bigskip
+The XSL for challenge problem reads the contents from the XML files according to the challenge problem schema and displays the information in a proper format if it is present in the XML file. An online tool is used to transform XML with XSL \cite{olXSL}. The tool accepts both the XML and XSL and then transforms XML code into HTML code understood by the browser. This html file is then viewed in the browser. Thus, XSL is used to display the data stored in the repository in readable format. The entire code for challenge problem XSL is found \url{https://github.com/ish1289/MEng_Project_Final/tree/master/XmlSchema_ChallengeProblems/XSLT}.
 The testing of the above schemas and XSL along with a case study is described in detail later in the report. 
 
 \chapter{Course Modules}
@@ -298,7 +296,7 @@ This section provides a sample XML and its transformed HTML code for a challenge
 
 Note that the report just provides one sample XML and HTML for a challenge problem. However, the schemas and XSLs are tested against reasonable number of XMLs in order to verify their validity and effectiveness and similarly XMLs and HTMLs can be obtained for other categories and data samples. The whole set of XMLs and HTMLs for all the categories is stored in a git repository and can be viewed at \url{https://github.com/ish1289/MEng_Project_Final}
 
-The \url{https://github.com/ish1289/MEng_Project_Final/blob/master/XmlSchema_ChallengeProblems/Sample_Xmls/XML_Challenge_Problem_SAT_Challenge.xml} gives XML for SAT challenge. The XML is prepared by extracting the information from SAT challenge website and then tagging it according to the challenge problem schema given in the Listing \ref{lst:CPSchema} \cite{SAT}. The XML is then validated using the online tool against the challenge problem schema \cite{olXSD}.
+The \url{https://github.com/ish1289/MEng_Project_Final/blob/master/XmlSchema_ChallengeProblems/Sample_Xmls/XML_Challenge_Problem_SAT_Challenge.xml} gives XML for SAT challenge. The XML is prepared by extracting the information from SAT challenge website and then tagging it according to the challenge problem schema given in the Listing \ref{lst:CPSchema} \cite{SAT}. The XML is then validated using the online tool against the challenge problem schema \cite{olXSD}. The corresponding HTML can be found out at \newline \url{https://github.com/ish1289/MEng_Project_Final/blob/master/XmlSchema_ChallengeProblems/Sample_HTMLs/HTML_SAT.html}.
 
 \chapter{Conclusion}
 Software certification refers to the process of certification of the software part in the system. The report talked about some approaches to accomplish this. Component reusability is now getting popular in software certification. However, the component to be reused needs to have the appropriate certification and certification management system. One of the challenges in this area is the management of useful information regarding the certification. Therefore, the design of the software repository which would manage information related to various areas around software certification, mainly focusing on the three areas viz. challenge problems, course modules and libraries and tools is proposed here.  
