@@ -1,0 +1,56 @@
+\\ Schema describes all the types required to store the execution environment details for challenge problems
+
+abstract inputRequirements: 
+\\ Stores the entire input requirement specified for the challenge problems
+  abstract inputRequirement : string*
+
+abstract outputRequirements: 
+\\ Stores the entire input requirement specified for the challenge problems
+  abstract outputRequirement : string* 
+
+\\Stores libraries
+abstract libraries: 
+  abstract library : [1..]
+    name : string?
+    description : string?
+    link :XLink*
+
+\\Stores compilers
+abstract compilers: 
+  abstract compiler : [1..]
+    name : string
+    description : string?
+
+\\Stores processors
+abstract processors: 
+  abstract processor : [1..]
+    name : string
+    memory : string
+    description : string?
+
+\\Stores OS    
+abstract OSUsed: 
+  abstract OS : [1..]
+    name : string
+    version : string
+
+\\Stores Deadlines
+abstract Deadlines : 
+  abstract Deadline : [1..]
+    name : string
+    actual deadline : datetime
+
+abstract executionEnvironment :
+   description : string?
+   libraries : librariesType?
+   compilers : compilersType?
+   processors : processorsType?
+   OSUsed : OSUsedType?
+
+abstract expectedSolution : 
+   AllowedForms :string?
+   inputRequirements : inputRequirementsType?
+   outputRequirements : outputRequirementsType?
+   executionEnvironment : executionEnvironmentType?
+   deadlines : deadlinesType?
+   allowedSubmissions : string?

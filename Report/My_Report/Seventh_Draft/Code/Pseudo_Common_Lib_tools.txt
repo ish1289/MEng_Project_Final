@@ -1,0 +1,19 @@
+\\ Common Schema for libraries and Tools
+\\ Contains complex Types common for both the schemas
+
+abstract Versions : 
+  \\Stores all versions of libraries and tools
+  abstract Version : [1..] 
+  \\ Has attribute Status (Current/Previous)
+    name : string?
+    description : string? 
+    year : string? 
+    Link : XLink* 
+
+abstract ExContentsType : 
+   description : string? 
+   content : descriptionType+
+
+abstract ContentFiles : 
+   description : string?
+   ContentFile : descriptionType+

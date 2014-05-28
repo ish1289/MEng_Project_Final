@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
+<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+ <!--Importing Common XMLSchema-->
+<xs:include schemaLocation="D:\MEng_Docs\MEng_Docs\Project\Common_Schema\XmlSchema_Common.xsd"/> 
+<xs:element name="modules">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="module" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="school" type="xs:string" minOccurs="0"></xs:element>
+            <xs:element name="moduleName" type="xs:string"></xs:element>
+            <xs:element name="moduleCode" type="xs:string"></xs:element>
+            <xs:element name="year" type="xs:string" minOccurs="0"></xs:element>
+            <xs:element name="professors" type="contactsType" minOccurs="0"></xs:element>
+            <xs:element name="status" type="xs:string" minOccurs="0"></xs:element>
+	    <xs:element name="requiredFor" type="xs:string" minOccurs="0"></xs:element>
+	    <xs:element name="allowedTracks" type="allowedTracksType" minOccurs="0"></xs:element>
+            <xs:element name="numberOfCredits" type="xs:string" minOccurs="0"></xs:element>
+	    <xs:element name="teachingTermsAllowed" type="termsType" minOccurs="0"></xs:element>
+	    <xs:element name="preRequisites" type="preRequisitesType" minOccurs="0"></xs:element>
+	    <xs:element name="courseDescription" type="descriptionType" minOccurs="0"></xs:element>
+            <xs:element name="aims" type="aimsType" minOccurs="0"></xs:element>
+            <xs:element name="learningOutcomes" type="learningOutcomesType" minOccurs="0"></xs:element>
+            <xs:element name="rules" type="ruleType" minOccurs="0"></xs:element>
+            <xs:element name="workload" type="workloadType" minOccurs="0"></xs:element> 
+            <xs:element name="feedback" type="feedbackType" minOccurs="0"></xs:element>
+            <xs:element name="content" type="contentType" minOccurs="0"></xs:element>
+            <xs:element name="location" type="xs:string" minOccurs="0"></xs:element>
+            <xs:element name="results" type="resultsType" minOccurs="0"></xs:element>   
+            <xs:element name="requiredLinks" type="relatedLinksType" minOccurs="0"></xs:element>  
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>   
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

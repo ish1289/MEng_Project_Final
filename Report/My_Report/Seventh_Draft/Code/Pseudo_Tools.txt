@@ -1,0 +1,45 @@
+\\ Include Common Schema and Common schema for libraries and tools
+
+\\ Root element 
+abstract Tools : 
+ abstract Tool : [1..]
+   Name : string 
+   Overview : description Type? 
+   Versions : versions Type? 
+   abstract Functionalities : ?
+     Function : description Type? 
+   abstract Intended Users : ?
+     User :  string+ 
+   Extensions : ExContents Type? 
+   Contacts : Contacts Type? 
+   Contents : Contents Type? 
+   abstract How To Obtain : ? 
+    abstract Source : [0..]
+      size : string? 
+      description :string? 
+      Link : XLink*
+    abstract binary : [0..]
+      description : string?
+      format :string?
+      size : string? 
+      link : XLink*
+    Others : descriptionType*
+    abstract executionEnvironment 
+     abstract languages : [0..]
+       language : string+
+     abstract inputRequirements : ? 
+       inputRequirement : string+
+     abstract Compatible Compilers : ?
+       compiler : description Type+
+     abstract Compatible Processors : ? 
+        abstract Processor : [1..] 
+         Name : string
+         Memory : string 
+         Description : string?
+     abstract OSUsed : ? 
+       abstract OS : [1..]
+         Name : string 
+         Version :string 
+    Related Tools : Tools Type? 
+    Documentation : documentationType? 
+    Related Links : Related Links Type?

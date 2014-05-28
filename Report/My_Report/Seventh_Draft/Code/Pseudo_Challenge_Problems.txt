@@ -1,0 +1,56 @@
+\\ Include common schema and execution environment schema
+\\ Root element
+abstract ChallengeProblems : 
+ abstract Challenges : [1..]
+   ChallengeName : string
+   Area : string?
+   abstract ChallengeDescription : ?
+	Description: string? 
+	abstract ChallengeDate : ? 
+		To : Date
+		From : Date
+        Location : string?
+        AssociatedConference : string?
+        Part of Series : string?
+   abstract Rules : ?
+       abstract rule : [1..]
+         Category : string
+         description : string?
+         inputRequirements : inputRequirementsType?
+         outputRequirements : outputRequirementsType?
+         Link: XLink*
+   Documentation : DocumentationType?
+   Year : year?
+   abstract AssessmentDescription : ? 
+   \\ Stores all assessment details 
+     description : string?
+     Link : XLink*
+     Jury : contactsType?
+     abstract ScoreDetails : ?
+       abstract Score : [1..]
+         Points : string?
+         description :string?
+   abstract Participants : ?
+     participant : string+
+     Link :XLink*
+   abstract benchmarks : ?
+     abstract benchmark : [1..]
+       Category : string?
+       description : string?
+       Format : string?
+       Timeline :duration?
+       Link: XLink*
+   ExpectedSolution : ExpectedSolutionType?
+   Results : ResultsType?
+   abstract Changes : ?
+     abstract change : [1..]
+        description : string?
+        link : XLink*
+   abstract solutions : ?
+   \\ Stores solutions if available 
+      abstract solution : [1..]
+         Format : string?
+         description : string? 
+         inputRequirements : inputRequirements? 
+         outputRequirements : outputRequirements? 
+         executionEnviornment : executionEnvironmentType?	        

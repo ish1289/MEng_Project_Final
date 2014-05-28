@@ -1,0 +1,25 @@
+\\ Include Common Schema and Common schema for libraries and tools
+
+abstract libraries : 
+  abstract library : [1..]
+    Name : string
+    Overview : descriptionType?
+    versions : versionsType?
+    Experimental Library Contents : ExContentsType? 
+    Contributors : ContactsType? 
+    ContentFiles : ContentFilesType? 
+    abstract Downloads : 
+     abstract Download : [1..]
+       description :string? 
+       Format : string? 
+       size :string? 
+       Link : XLink* 
+    Required Tools : Tools Type? 
+    Documentation : ? 
+    abstract Dependency Details : ?  
+     dependency : description type+
+    abstract Examples : ?
+      Example : description Type+
+    abstract References : ?
+      Reference : description Type+
+    Related Link : Related Links Type?
