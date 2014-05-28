@@ -4,14 +4,20 @@
 abstract Tools : 
  abstract Tool : [1..]
    Name : string 
+   \\description Type : defined in Common Schema
    Overview : description Type? 
+   \\versions Type : defined in Common schema for libraries and tools
    Versions : versions Type? 
    abstract Functionalities : ?
+     \\description Type : defined in Common Schema
      Function : description Type? 
    abstract Intended Users : ?
      User :  string+ 
+   \\ExContents Type : defined in Common schema for libraries and tools
    Extensions : ExContents Type? 
+   \\Contacts Type :defined in common schema
    Contacts : Contacts Type? 
+   \\Contents Type : defined in Common schema for libraries and tools
    Contents : Contents Type? 
    abstract How To Obtain : ? 
     abstract Source : [0..]
@@ -40,6 +46,9 @@ abstract Tools :
        abstract OS : [1..]
          Name : string 
          Version :string 
+    \\Tools Type : defined in common schema
     Related Tools : Tools Type? 
+    \\documenation Type : defined in common schema
     Documentation : documentationType? 
+    \\ RelatedLinks Type : defined in common schema
     Related Links : Related Links Type?

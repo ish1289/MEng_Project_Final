@@ -6,6 +6,7 @@ abstract modules :
     School/University : string?
     Module Name : string 
     Module Code : string?
+    \\ConactsType : defined in common schema
     Professors : ContactsType?
     Status : string?
     Required For : string? 
@@ -63,6 +64,8 @@ abstract modules :
             description : string? 
             weight : string? 
             Link : XLink*
+    \\ToolsType : defined in common schema
      AllowedTools: ToolsType?
+     \\ RelatedLinks Type : defined in common schema
      RelatedLinks : RelatedLinksType?
      Location :string?

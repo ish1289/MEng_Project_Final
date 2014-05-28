@@ -16,15 +16,19 @@ abstract ChallengeProblems :
        abstract rule : [1..]
          Category : string
          description : string?
+         \\inputRequirementsType : defined in execution environment schema
          inputRequirements : inputRequirementsType?
+         \\outputRequirementsType is defined in execution environment schema
          outputRequirements : outputRequirementsType?
          Link: XLink*
+   \\DocumentationType : defined in common schema
    Documentation : DocumentationType?
    Year : year?
    abstract AssessmentDescription : ? 
    \\ Stores all assessment details 
      description : string?
      Link : XLink*
+     \\ContactsType : Defined in Common Schema
      Jury : contactsType?
      abstract ScoreDetails : ?
        abstract Score : [1..]
@@ -40,7 +44,9 @@ abstract ChallengeProblems :
        Format : string?
        Timeline :duration?
        Link: XLink*
+   \\ExpectedSolutionType : Defined in execution environment schema 
    ExpectedSolution : ExpectedSolutionType?
+   \\ ResultsType : Defined in common schema
    Results : ResultsType?
    abstract Changes : ?
      abstract change : [1..]
@@ -51,6 +57,9 @@ abstract ChallengeProblems :
       abstract solution : [1..]
          Format : string?
          description : string? 
+         \\inputRequirementsType : defined in execution environment schema
          inputRequirements : inputRequirements? 
+          \\outputRequirementsType is defined in execution environment schema
          outputRequirements : outputRequirements? 
+         \\executionEnvironmentType defined in execution environment schema
          executionEnviornment : executionEnvironmentType?	        
