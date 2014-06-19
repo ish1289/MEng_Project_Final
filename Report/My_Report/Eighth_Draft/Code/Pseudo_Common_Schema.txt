@@ -1,0 +1,39 @@
+\\ Schema Common to Challenge Problems, Course Modules, Certified Libraries and Tools
+\\ Contains declaration of all common types
+
+\\ Stores all the contact details
+abstract Contacts: 
+abstract Contact [1..]
+ name: string? 
+ description:  string?
+ Phone: string*
+ Email: string*
+ Link: XLink*
+
+\\ Stores all relevant tools details 
+abstract Tools: 
+abstract Tool: [1..]
+   name : string
+   description : string?
+   link : XLink*
+
+\\ Tags all the documentation information
+abstract documents : 
+abstract document :[1..]
+   name: string 
+   description : string?
+   link : XLink*
+
+\\ Tags all the links specific to the area
+abstract relatedLinks : 
+ Link: XLink*
+
+\\Stores all the specific results information in the form of links
+abstract results: 
+ Link: XLink*
+
+\\Stores details
+abstract DescriptionType: 
+  name: string?
+  description: string?
+  Link : XLink*

@@ -1,0 +1,180 @@
+\begin{thebibliography}{SAT12b}
+
+\bibitem[Ale13]{Alea}
+{Alea: a library for reasoning on randomized algorithms in Coq }.
+\newblock \url{https://www.lri.fr/~paulin/ALEA/}, 2013.
+
+\bibitem[AW10]{Lawford}
+Mark~Lawford Alan~Wassyng, Tom~Maibaum.
+\newblock On software certification: We need product-focused approaches.
+\newblock Number LNCS 6028. Springer-Verlag Berlin Heidelberg, 2010.
+\newblock C. Choppy and O. Sokolsky (Eds.): Monterey Workshop 2008.
+
+\bibitem[BCa]{BCastleJava}
+{Legion of the Bouncy Castle Java cryptography APIs }.
+\newblock \url{http://www.bouncycastle.org/java.html}.
+
+\bibitem[Ben11]{seminar}
+Marc Bender.
+\newblock What is software certification?
+\newblock McMaster Centre for Software Certification (McSCert), April 13 2011.
+\newblock McSCert Seminar 2.
+
+\bibitem[Bri13a]{olXSD}
+Domenico Briganti.
+\newblock {W3C XML Schema (XSD) Validation online}.
+\newblock \url{http://www.utilities-online.info/xsdvalidation/#.U0M3I_ldXwg},
+  2013.
+
+\bibitem[Bri13b]{olXSL}
+Domenico Briganti.
+\newblock {XSLT (eXtensible Stylesheet Language Transformations) online
+  transformations}.
+\newblock
+  \url{http://www.utilities-online.info/xsltransformation/#.U0M6RfldXwg}, 2013.
+
+\bibitem[BSh]{BSharp}
+{Legion of the Bouncy Castle C sharp cryptography APIs }.
+\newblock \url{http://www.bouncycastle.org/csharp/}.
+
+\bibitem[CAD]{CADP}
+{Construction and Analysis of Distributed Processes}.
+\newblock \url{http://cadp.inria.fr/}.
+\newblock Toolbox for the design of asynchronous concurrent systems.
+
+\bibitem[CAD12]{CADEConference}
+{ CADE - the Conference on Automated Deduction}.
+\newblock \url{http://www.cadeinc.org/}, 2012.
+
+\bibitem[CAD13]{CADE}
+{The CADE ATP System Competition}.
+\newblock \url{http://www.cs.miami.edu/~tptp/CASC/}, 2013.
+\newblock The World Championship for Automated Theorem Proving.
+
+\bibitem[Cla13]{Clafer}
+{Clafer Notation}.
+\newblock \url{http://gsd.uwaterloo.ca/clafer}, 2013.
+
+\bibitem[COQ]{COQ}
+{The Coq Proof Assistant}.
+\newblock \url{http://coq.inria.fr/}.
+
+\bibitem[CW94]{CSC}
+Per~Runeson Claes~Wohlin.
+\newblock Certification of software components.
+\newblock {\em IEEE TRANSACTIONS ON SOFTWARE ENGINEERING}, 20, June 1994.
+
+\bibitem[DF05]{SCMS}
+Ewen Denney and Bernd Fischer.
+\newblock Software certification and software certificate management systems.
+\newblock In {\em 2005 Automated Software Engineering Workshop on Software
+  Certificate Management}, Long Beach, California, USA, November 8 2005.
+  Association for Computing Machinery.
+
+\bibitem[DFC]{DFC}
+{A Coq Library on Floating-Point Arithmetic }.
+\newblock \url{http://lipforge.ens-lyon.fr/www/pff/}.
+
+\bibitem[Gli]{Glibc}
+{The GNU C Library (glibc)}.
+\newblock \url{https://www.gnu.org/software/libc/index.html}.
+
+\bibitem[IJC12]{IJCAR}
+{ IJCAR 2012 – The 6th International Joint Conference on Automated
+  Reasoning}.
+\newblock \url{http://ijcar.cs.manchester.ac.uk/}, 2012.
+
+\bibitem[MaC13]{MaC}
+{MECHTRON/SFWR ENG 4AA4/6GA3 – Real-Time Systems }, 2013.
+\newblock McMaster University.
+
+\bibitem[McC13]{McCert}
+{McMaster Centre for Software Certification}.
+\newblock \url{https://www.mcscert.ca/}, 2013.
+
+\bibitem[MCH]{MCHIP}
+{Microchip Certified Class B Safety Software Library for 16 bit and PIC32 MCUs
+  }.
+\newblock
+  \url{http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=2680&dDocName=en548988}.
+
+\bibitem[NUS]{NUSMV}
+{NuSMV: a new symbolic model checker}.
+\newblock \url{http://nusmv.fbk.eu/}.
+
+\bibitem[Pac07]{Pacemaker}
+{Pacemaker Formal Methods Challenge}.
+\newblock \url{http://sqrl.mcmaster.ca/pacemaker.htm}, 2007.
+
+\bibitem[SAT12a]{SATEvent}
+{ Fifteenth International Conference on Theory and Applications of
+  Satisfiability Testing (SAT 2012)}.
+\newblock \url{http://sat2012.fbk.eu/}, 2012.
+
+\bibitem[SAT12b]{SAT}
+{SAT Challenge 2012}.
+\newblock \url{http://baldur.iti.kit.edu/SAT-Challenge-2012/}, 2012.
+
+\bibitem[SMP]{SMPS}
+{SMPS Control Library}.
+\newblock
+  \url{http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=2680&dDocName=en567449}.
+
+\bibitem[SMT12]{SMT}
+{SMT-COMP 2012}.
+\newblock \url{http://smtcomp.sourceforge.net/2012/}, 2012.
+
+\bibitem[SSL]{SSL}
+{OpenSSL}.
+\newblock \url{http://www.openssl.org/}.
+
+\bibitem[STL]{STL}
+{Introduction to the Standard Template Library}.
+\newblock \url{https://www.sgi.com/tech/stl/stl_introduction.html}.
+
+\bibitem[SV13]{SV}
+{Competition on Software Verification (SV-COMP)}.
+\newblock \url{http://sv-comp.sosy-lab.org/2013/index.php}, 2013.
+
+\bibitem[TAC13]{TACAS}
+{TACAS 2013}.
+\newblock \url{http://www.etaps.org/index.php/2013/tacas}, 2013.
+
+\bibitem[Vic]{Victoria}
+{Embedded and Networked Systems }.
+\newblock \url{http://www.vu.edu.au/units/ENE3202}.
+\newblock Victoria University.
+
+\bibitem[Voa14]{Voas}
+Jeffrey Voas.
+\newblock Developing a usage-based software certification process.
+\newblock Reliable Software Technologies, 03 2014.
+
+\bibitem[Wat14]{Waterloo}
+{ECE423: Embedded Computer Systems }, 2014.
+\newblock University of Waterloo.
+
+\bibitem[XML10]{XMLDB}
+{XML Database}.
+\newblock \url{http://www.rpbourret.com/xml/XMLDatabaseProds.htm}, 2010.
+
+\bibitem[XPa99]{XPath}
+{XML Path Language (XPath)Version 1.0}.
+\newblock \url{http://www.w3.org/TR/xpath/}, 1999.
+
+\bibitem[XQu01]{XQuery}
+{W3C XML Query (XQuery)}.
+\newblock \url{http://www.w3.org/XML/Query/}, 2001.
+
+\bibitem[XSD11]{XSD}
+{XML Schema}.
+\newblock \url{http://www.w3.org/XML/Schema/}, 2011.
+
+\bibitem[Yor13]{York}
+{Course Modules Offered at York University }.
+\newblock
+  \url{https://www.cs.york.ac.uk/postgraduate/taught-courses/msc-scse/#tab-2},
+  2013.
+\newblock MSc in Safety Critical Systems Engineering.
+
+\end{thebibliography}
