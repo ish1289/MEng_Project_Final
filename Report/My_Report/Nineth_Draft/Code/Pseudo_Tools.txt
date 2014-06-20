@@ -1,0 +1,54 @@
+\\ Include Common Schema and Common schema for libraries and tools
+
+\\ Root element 
+abstract Tools : 
+ abstract Tool : [1..]
+   Name : string 
+   \\description Type : defined in Common Schema
+   Overview : description Type? 
+   \\versions Type : defined in Common schema for libraries and tools
+   Versions : versions Type? 
+   abstract Functionalities : ?
+     \\description Type : defined in Common Schema
+     Function : description Type? 
+   abstract Intended Users : ?
+     User :  string+ 
+   \\ExContents Type : defined in Common schema for libraries and tools
+   Extensions : ExContents Type? 
+   \\Contacts Type :defined in common schema
+   Contacts : Contacts Type? 
+   \\Contents Type : defined in Common schema for libraries and tools
+   Contents : Contents Type? 
+   abstract How To Obtain : ? 
+    abstract Source : [0..]
+      size : string? 
+      description :string? 
+      Link : XLink*
+    abstract binary : [0..]
+      description : string?
+      format :string?
+      size : string? 
+      link : XLink*
+    Others : descriptionType*
+    abstract executionEnvironment 
+     abstract languages : [0..]
+       language : string+
+     abstract inputRequirements : ? 
+       inputRequirement : string+
+     abstract Compatible Compilers : ?
+       compiler : description Type+
+     abstract Compatible Processors : ? 
+        abstract Processor : [1..] 
+         Name : string
+         Memory : string 
+         Description : string?
+     abstract OSUsed : ? 
+       abstract OS : [1..]
+         Name : string 
+         Version :string 
+    \\Tools Type : defined in common schema
+    Related Tools : Tools Type? 
+    \\documenation Type : defined in common schema
+    Documentation : documentationType? 
+    \\ RelatedLinks Type : defined in common schema
+    Related Links : Related Links Type?

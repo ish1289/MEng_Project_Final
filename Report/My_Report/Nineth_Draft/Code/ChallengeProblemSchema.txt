@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
+<xs:include schemaLocation="XmlSchema_Execution_Environment_Challenge_Problem_Version_6.xsd"/>
+<!--Importing Common XMLSchema-->
+<xs:include schemaLocation="D:\MEng_Docs\MEng_Docs\Project\Common_Schema\XmlSchema_Common.xsd"/> 
+<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+  <!-- Main Schema -->
+  <xs:element name ="challenges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="challenge" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="challengeName" type="xs:string" />
+              <xs:element name="area" type="xs:string" />
+              <xs:element name="challengeDescription" type="challengeDescriptionType"></xs:element>
+              <xs:element name="rules" type="ruleType" minOccurs="0"></xs:element>
+              <xs:element name="supportingDocuments" type="supportingDocumentsType" minOccurs="0"></xs:element>
+              <xs:element name="year" type="xs:gYear" minOccurs="0"></xs:element>
+              <xs:element name="assessmentDescription" type="assesmentDescriptionType" minOccurs="0"></xs:element>
+              <xs:element name="participants" type="participantsType" minOccurs="0"></xs:element>
+              <xs:element name="benchmarks" type="benchmarksType" minOccurs="0"></xs:element>
+              <xs:element name="expectedSolution" type="expectedSolutionType"></xs:element>
+              <xs:element name="allowedTools" type="toolsType" minOccurs="0"></xs:element>
+              <xs:element name="solutions" type="solutionsType" minOccurs="0"></xs:element>
+              <xs:element name="contactDetails" type="contactsType" minOccurs="0"></xs:element>
+              <xs:element name="results" type="resultsType" minOccurs="0"></xs:element>
+              <xs:element name="changes" type="changesType" minOccurs="0"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
